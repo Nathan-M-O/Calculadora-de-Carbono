@@ -1,0 +1,65 @@
+def calculadora_de_carbono():
+    gasolina = float(input("Informe o consumo de gasolina (litros/mês):"))
+    diesel = float(input("Informe o consumo de diesel (litros/mês): "))
+    etanol = float(input("Informe o consumo de etanol (litros/mês):"))
+    gnv = float(input("Informe o consumo de gás natural veicular (m3/mês):"))
+    kwh = float(input("Informe o consumo de eletricidade (kWh/mês): "))
+    gas = float(input("Informe o consumo de gás de cozinha (botijão 15kg/mês):"))
+    carne_bovina = float(input("Informe o consumo de carne bovina (kg/mês): "))
+    carne_frango = float(input("Informe o consumo de carne de frango (kg/mês): "))
+    leite = float(input("Informe o consumo de leite (litros/mês): "))
+    ovos = float(input("Informe o consumo de ovos (unidades/mês): "))
+    aviao_br = int(input("Viagens nacionais de avião (pessoas por viagem/ano):"))
+    aviao_inter = int(input("Viagens internacionais de avião (pessoas por viagem/ano:"))
+    emissoes = {"Gasolina": 1.6,
+                 "Diesel": 2.3,
+                 "Etanol": 0.62,
+                 "GNV": 2.1,
+                 "Eletricidade": 0.1,
+                 "Gás": 3.16,
+                 "Carne Bovina": 0.1521,
+                 "Carne Frango": 0.0006,
+                 "Leite": 0.0017,
+                 "Ovos": 0.0001,
+                 "Voo BR": 106.1,
+                 "Voo Internacional": 605.6,}
+    total_combustiveis = (gasolina * emissoes["Gasolina"]) + (diesel * emissoes[ "Diesel"]) + (gnv * emissoes["GNV"]) + (etanol * emissoes["Etanol"])
+    total_eletricidade = (kwh * emissoes["Eletricidade"])
+    total_gas = (gas * emissoes["Gás"])
+    total_produtos_animais = (carne_bovina * emissoes["Carne Bovina"]) + (carne_frango * emissoes["Carne Frango"]) + (leite * emissoes[ "Leite"]) + (ovos * emissoes["Ovos"])
+    total_viagens = (aviao_br * emissoes["Voo BR"]) + (aviao_inter * emissoes["Voo Internacional"])
+    emissoes_totais = total_combustiveis + total_eletricidade + total_gas + total_produtos_animais
+    anual = ((emissoes_totais * 12) + total_viagens) /1000
+    mensal = anual / 12
+    cc = anual / 1
+    moeda = {"R$":26,
+             "USD$":10,
+             "EUR$":50}
+    real = moeda["R$"] * cc
+    dolar = moeda["USD$"] * cc
+    euro = moeda["EUR$"] * cc
+    total = emissoes_totais + total_viagens
+    absorcao = 150
+    qtd_arvores = total / absorcao
+    print("----------------------------------------------------------")
+    print("TOTAL DE EMISSÕES:")
+    print(f"Quantidade aproximada de emissões mensais: {mensal:.3f} toneladas de CO2")
+    print(f"Quantidade aproximada de emissões anuais: {anual:.2f} toneladas de CO2")
+    print("----------------------------------------------------------")
+    print("COMPENSAÇÃO MONETÁRIA:")
+    print(f"Quantidade de créditos de carbono necessários para compensar as emissões: {cc:.0f}")
+    print(f"Preço dos créditos de carbono necessários em real: {real:.2f}")
+    print(f"Preço dos créditos de carbono necessários em dólar: {dolar:.2f}")
+    print(f"Preço dos créditos de carbono necessários em euro: {euro:.2f}")
+    print("----------------------------------------------------------")
+    print("COMPENSAÇÃO POR SEQUESTRO DE CARBONO:")
+    print(f"Quantidade aproximada de árvores necessárias para compensar as emissões: {qtd_arvores:.0f}")
+    print("Sugestões de árvores á serem plantadas: Mogno, Castanheira, Ipê, Jatobá, Aroeira, Jequitibá")
+print("----------------------------------------------------------")
+print("                  CALCULADORA DE CARBONO                  ")
+print("----------------------------------------------------------")
+print("SEJA BEM VINDO(A)!")
+print("Informe os dados solicitados:")
+calculadora_de_carbono()
+print("----------------------------------------------------------")
+print("OBRIGADO POR USAR NOSSO SOFTWARE!")
