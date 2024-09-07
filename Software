@@ -46,9 +46,9 @@ def calculadora_de_carbono():
     cc = emissoes_totais_anuais 
 
        moeda = { 
-        "R$": 26, 
-        "USD$": 10, 
-        "EUR$": 50 
+        "R$": 85, 
+        "USD$": 30, 
+        "EUR$": 100 
     } 
   
     real = moeda["R$"] * cc 
